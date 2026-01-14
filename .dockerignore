@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+
+# VCS
+.git/
+.gitignore
+
+# Node/Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/dist/
+
+# Docker artifacts
+Dockerfile*
+.dockerignore
+
+# OS / Editor
+.DS_Store
+.idea/
+.vscode/
+
+# Data backups
+*.sqlite3
+*.db-journal
