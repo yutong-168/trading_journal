@@ -17,6 +17,23 @@ def init_db():
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
     """)
+    
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS journals (
+        journal_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        symbol TEXT NOT NULL,
+        side TEXT NOT NULL CHECK (side IN ('buy', 'sell')),
+        price REAL NOT NULL,
+        quantity INTEGER NOT NULL,
+        note TEXT,
+        exit_price REAL,
+        exit_time TIMESTAMP,
+        pnl REAL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users(user_id)
+    )
+    """)
 
     conn.commit()
     conn.close()
