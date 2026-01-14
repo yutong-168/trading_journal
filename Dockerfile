@@ -8,7 +8,6 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r backend/requirements.txt
 
-# 关键：把工作目录切到 backend
 WORKDIR /app/backend
 
 EXPOSE 5000
