@@ -17,7 +17,9 @@ def create_journal(user_id, symbol, side, price, quantity, note=None):
     )
     
     conn.commit()
+    last_id = cursor.lastrowid
     conn.close()
+    return last_id
 
 
 def get_journals_by_user(user_id):

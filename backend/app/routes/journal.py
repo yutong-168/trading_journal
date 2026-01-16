@@ -25,7 +25,7 @@ def create_journal():
         return jsonify({"error": "Missing required fields"}), 400
     
     try:
-        add_journal(
+        journal_id = add_journal(
             user_id=user_id,
             symbol=symbol,
             side=side,
@@ -36,7 +36,7 @@ def create_journal():
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
 
-    return jsonify({"message": "Journal created successfully"}), 201
+    return jsonify({"message": "Journal created successfully", "journal_id": journal_id}), 201
 
 
  

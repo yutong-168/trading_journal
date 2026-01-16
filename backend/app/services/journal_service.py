@@ -17,7 +17,7 @@ def add_journal(user_id, symbol, side, price, quantity, note=None):
     if note is not None and len(note) > 1000:
         raise ValueError("Note is too long")
 
-    create_journal(
+    journal_id = create_journal(
         user_id=user_id,
         symbol=symbol,
         side=side,
@@ -26,7 +26,7 @@ def add_journal(user_id, symbol, side, price, quantity, note=None):
         note=note,
     )
     
-    return True
+    return journal_id
 
 
 def list_journals(user_id):

@@ -1,0 +1,19 @@
+# ========= Python =========
+__pycache__/
+*.pyc
+
+# ========= Environment =========
+.env
+.env.*
+
+# ========= Local DB / Data =========
+init_db.py
+data/
+uploads/
+
+# ========= Node / Frontend =========
+node_modules/
+frontend/dist/
+
+# ========= OS =========
+.DS_Store
