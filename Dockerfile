@@ -10,6 +10,6 @@ RUN pip install --no-cache-dir -r backend/requirements.txt
 
 WORKDIR /app/backend
 
-EXPOSE 5000
+EXPOSE 5050
 
 CMD ["python", "-m", "app.run"]

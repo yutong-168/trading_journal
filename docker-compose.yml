@@ -6,10 +6,11 @@ services:
     working_dir: /app/backend
     command: python -m app.run
     ports:
-      - "5001:5000"
+      - "5050:5050"
     volumes:
       - ./backend:/app/backend
       - ./backend/data:/app/backend/data
+      - ./backend/uploads:/app/backend/uploads
     environment:
       PYTHONDONTWRITEBYTECODE: "1"
       PYTHONUNBUFFERED: "1"
